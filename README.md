@@ -98,7 +98,7 @@ tree -d '/media/jonathan/WINDOWS1/'
 
 ## How to use Legacy installer script
 
-- Pending: UEFI installation works only to the grub.
+- Pending: UEFI installation works, but only to the grub entries.
 
 ## Built With
 
