@@ -1,4 +1,4 @@
-# windows-usb-installer-from-linux
+# Make a usb Windows installer from Linux
 
 Automatic create bootable usb with grub, then copy and paste files from Windows iso to usb, tested with Windows 7, 8 and 10.
 
