@@ -2,7 +2,7 @@
 
 Automatic create bootable usb with grub, then copy and paste files from Windows iso to usb, tested with Windows 7, 8 and 10.
 
-# General information
+### General information
 
 Tested only on Debian Buster.
 
