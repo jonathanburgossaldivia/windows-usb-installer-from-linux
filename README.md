@@ -23,7 +23,7 @@ To solve this you must:
 
 To solve this you must:
 
-- Select a UEFI file as trusted for executing
+- Select a UEFI file as trusted for executing from your Bios
 - Create a profile for boot with this path to file as trusted on UEFI settings: /USB0/BOOT/grubx64.efi
 - Boot from the UEFI profile
 
@@ -71,7 +71,7 @@ usb_name='PENDRIVE'
 Now that we have everything we must execute the script, for this just drag and drop it to the console or terminal app, interpose 'sudo sh ' and press enter:
 
 ```
-sudo sh '/your/usb/path/legacy_installer.sh'
+sudo sh '/your/folder/path/legacy_installer.sh'
 ```
 
 If all goes well you should be able to see the folder called 'grub' on your pendrive, (at this point your flash drive is bootable), to finish with the pendrive just disconnect your flash drive and reconnect it, then copy all the files from your Windows iso into the root of the pendrive (not inside the 'grub' folder), to understand it better, the iso files should be copied next to the 'grub' folder (not real tree, is only a example).
