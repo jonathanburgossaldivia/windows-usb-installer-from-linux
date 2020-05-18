@@ -2,7 +2,7 @@
 
 Automatic create bootable usb with grub, then copy and paste files from Windows iso to usb, tested with Windows 7, 8 and 10.
 
-## General information
+# General information
 
 Tested only on Debian Buster.
 
@@ -27,7 +27,7 @@ To solve this you must:
 - Create a profile for boot with this path to file as trusted on UEFI settings: /USB0/BOOT/grubx64.efi
 - Boot from the UEFI profile
 
-### Prerequisites
+### Preparing everything for make a usb installer
 
 Packages required:
 
@@ -40,8 +40,6 @@ Can install the packages with this command:
 ```
 sudo apt install grub-pc-bin grub-efi-ia32-bin grub-efi-amd64-bin parted
 ```
-
-### Preparing everything for make a usb installer
 
 Change mode to 'x' to the files, example:
 
