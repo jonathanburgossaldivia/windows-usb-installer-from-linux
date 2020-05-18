@@ -20,7 +20,7 @@ Can install the packages with this command:
 sudo apt install grub-pc-bin grub-efi-ia32-bin grub-efi-amd64-bin parted
 ```
 
-### First steps
+### PHow to usereparing everything
 
 Change mode to 'x' to the 2 files, example:
 
