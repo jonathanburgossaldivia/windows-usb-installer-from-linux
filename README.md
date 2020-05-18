@@ -49,13 +49,13 @@ usb_name='PENDRIVE'
 
 ### How to use
 
-Now that we have everything we must execute the script, for this just drag it to the console or terminal app, interpose 'sudo' and press enter:
+Now that we have everything we must execute the script, for this just drag it to the console or terminal app, interpose 'sudo sh -c' and press enter:
 
 ```
 sudo sh -c '/your/usb/path/legacy_installer.sh'
 ```
 
-If all goes well you should be able to see the folder called 'grub' on your pendrive, (at this point your flash drive is bootable), to finish with the pendrive just disconnect your flash drive and reconnect it, then copy all the files from your Windows iso into the root of the pendrive (not inside the 'grub' folder).
+If all goes well you should be able to see the folder called 'grub' on your pendrive, (at this point your flash drive is bootable), to finish with the pendrive just disconnect your flash drive and reconnect it, then copy all the files from your Windows iso into the root of the pendrive (not inside the 'grub' folder), to understand it better, the iso files should be copied next to the 'grub' folder (not real tree, is only a example).
 
 ```
 tree -d '/media/jonathan/WINDOWS1/'
