@@ -28,7 +28,7 @@ set menu_color_highlight=yellow/dark-gray
 set menu_color_normal=black/light-gray
 set color_normal=yellow/black
  
-menuentry "USB Installation for Microsoft Windows /7/8/8.1/10 MBR/MSDOS" {
+menuentry "USB Installation for Microsoft Windows /7/8/8.1/10 BIOS/MBR" {
     insmod ntfs
     insmod search_label
     search --no-floppy --set=root --label ${usb_name} --hint hd0,msdos1
