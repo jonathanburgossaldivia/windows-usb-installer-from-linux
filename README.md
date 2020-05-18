@@ -8,7 +8,7 @@ Tested only on Debian Buster.
 
 ## Before starting to consider a couple of things
 
-### Problems with CD/DVD drivers on installation
+### To prevent problems with CD/DVD drivers on installation
 
 In some cases Windows 7, 8 or 10 does not detect cd or dvd drivers, this means:
 
@@ -19,7 +19,7 @@ To solve this you must:
 - Use a usb 2.0 flash drive for the installation
 - Put the flash drive in a usb 2.0 port of PC or laptop everything for make a usb installer
 
-### Grub does not start in UEFI mode
+### To prevent Grub does not start in UEFI mode
 
 To solve this you must:
 
