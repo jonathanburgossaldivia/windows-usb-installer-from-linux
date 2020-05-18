@@ -49,7 +49,7 @@ usb_name='PENDRIVE'
 
 ### How to use
 
-Now that we have everything we must execute the script, for this just drag it to the console or terminal app, interpose 'sudo sh -c' and press enter:
+Now that we have everything we must execute the script, for this just drag and drop it to the console or terminal app, interpose 'sudo sh -c' and press enter:
 
 ```
 sudo sh -c '/your/usb/path/legacy_installer.sh'
