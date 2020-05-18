@@ -1,5 +1,7 @@
 # windows-usb-installer-from-linux
-Create a Windows usb installer from Linux
+
+Create bootable usb with grub, then copy and paste files from Windows iso to usb, tested with Windows 7,8 and 10.
+
 ## General information
 
 Tested only on Debian Buster.
