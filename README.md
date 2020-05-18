@@ -1,6 +1,6 @@
 # windows-usb-installer-from-linux
 
-Create bootable usb with grub, then copy and paste files from Windows iso to usb, tested with Windows 7, 8 and 10.
+Automatic create bootable usb with grub, then copy and paste files from Windows iso to usb, tested with Windows 7, 8 and 10.
 
 ## General information
 
@@ -49,8 +49,10 @@ usb_name='PENDRIVE'
 
 ### How to use
 
+Now that we have everything we must execute the script, for this just drag it to the console or terminal app, interpose 'sudo' and press enter:
+
 ```
-./legacy_installer.sh
+sudo /your/usb/path/legacy_installer.sh
 ```
 
 ## Built With
