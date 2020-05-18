@@ -20,9 +20,9 @@ Can install the packages with this command:
 sudo apt install grub-pc-bin grub-efi-ia32-bin grub-efi-amd64-bin parted
 ```
 
-### PHow to usereparing everything
+### Preparing everything for make a usb installer
 
-Change mode to 'x' to the 2 files, example:
+Change mode to 'x' to file, example:
 
 ```
 chmod +x legacy_installer.sh
