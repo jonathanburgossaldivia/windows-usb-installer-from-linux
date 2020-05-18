@@ -12,22 +12,32 @@ Packages required:
 grub-pc-bin, grub-efi-ia32-bin, grub-efi-amd64-bin, parted
 ```
 
-### Installing
-
-the way to install is like this:
+Can install the packages with this command:
 
 ```
 sudo apt install grub-pc-bin grub-efi-ia32-bin grub-efi-amd64-bin parted
 ```
 
-### How to use
+### First steps
 
-Open Terminal app or other console app and change mode to 'x' to the 2 files, example:
+Change mode to 'x' to the 2 files, example:
 
 ```
 chmod +x legacy_installer.sh
 ```
-Execute:
+### How to use
+
+First steps you need to know the name of device, in my case, since the name of my usb is WINDOWS I can know that the name of the device is sdb, for know that you can use this command: 
+
+```
+sudo lsblk | grep -v sda
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+loop3    7:3    0     2G  1 loop /media/jonathan/Win10
+sdb      8:16   1  15,1G  0 disk 
+└─sdb1   8:17   1  15,1G  0 part /media/jonathan/WINDOWS
+sr0     11:0    1  1024M  0 rom
+
+```
 
 ```
 ./legacy_installer.sh
