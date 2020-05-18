@@ -25,7 +25,6 @@ Change mode to 'x' to the 2 files, example:
 ```
 chmod +x legacy_installer.sh
 ```
-### How to use
 
 First steps you need to know the name of device, in my case, since the name of my usb is WINDOWS I can know that the name of the device is sdb, for know that you can use this command: 
 
@@ -38,6 +37,8 @@ sdb      8:16   1  15,1G  0 disk
 sr0     11:0    1  1024M  0 rom
 
 ```
+
+### How to use
 
 ```
 ./legacy_installer.sh
