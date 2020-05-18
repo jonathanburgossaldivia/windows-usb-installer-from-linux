@@ -22,7 +22,7 @@ sudo apt install grub-pc-bin grub-efi-ia32-bin grub-efi-amd64-bin parted
 
 ### Preparing everything for make a usb installer
 
-Change mode to 'x' to file, example:
+Change mode to 'x' to the files, example:
 
 ```
 chmod +x legacy_installer.sh
