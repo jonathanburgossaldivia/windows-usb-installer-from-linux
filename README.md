@@ -8,6 +8,8 @@ Tested only on Debian Buster.
 
 ## Before starting to consider a couple of things
 
+### Problems with CD/DVD drivers on installation
+
 In some cases Windows 7, 8 or 10 does not detect cd or dvd drivers, this means:
 
 - Windows claims that the installation is done from a CD/DVD, therefore the problem is with the USB stick or PC USB port.
@@ -16,6 +18,14 @@ To solve this you must:
 
 - Use a usb 2.0 flash drive
 - Put the flash drive in a usb 2.0 port of PC or laptop
+
+### Grub does not start in UEFI mode
+
+To solve this you must:
+
+- Select a uefi file as trusted for executing
+- Create a profile for boot with this path to file as trusted on uefi settings: /USB0/BOOT/grubx64.efi
+- Boot from the uefi profile
 
 ### Prerequisites
 
