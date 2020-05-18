@@ -1,6 +1,6 @@
 # windows-usb-installer-from-linux
 
-Create bootable usb with grub, then copy and paste files from Windows iso to usb, tested with Windows 7,8 and 10.
+Create bootable usb with grub, then copy and paste files from Windows iso to usb, tested with Windows 7, 8 and 10.
 
 ## General information
 
@@ -38,6 +38,13 @@ sdb      8:16   1  15,1G  0 disk
 └─sdb1   8:17   1  15,1G  0 part /media/jonathan/WINDOWS
 sr0     11:0    1  1024M  0 rom
 
+```
+
+Now that we have everything ready we must modify the script, first put the name of the device (assuming it is 'sdc') and then the name that we will give to the pendrive (example 'pendrive'), it must be simple, with capital letters and without numbers:
+
+```
+usb='sdc'
+usb_name='PENDRIVE'
 ```
 
 ### How to use
