@@ -35,7 +35,7 @@ Packages required:
 grub-pc-bin, grub-efi-ia32-bin, grub-efi-amd64-bin, parted
 ```
 
-Can install the packages with this command:
+If you have a Debian based system you can install the packages with this command:
 
 ```
 sudo apt install grub-pc-bin grub-efi-ia32-bin grub-efi-amd64-bin parted
