@@ -15,7 +15,7 @@ In some cases Windows 7, 8 or 10 does not detect cd or dvd drivers, this means:
 To solve this you must:
 
 - Use a usb 2.0 flash drive
-- Put the flash drive in a usb 2.0 port of a PC
+- Put the flash drive in a usb 2.0 port of PC or laptop
 
 ### Prerequisites
 
