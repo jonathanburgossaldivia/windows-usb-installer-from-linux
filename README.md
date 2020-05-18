@@ -27,7 +27,7 @@ To solve this you must:
 - Create a profile for boot with this path to file as trusted on UEFI settings: /USB0/BOOT/grubx64.efi
 - Boot from the UEFI profile
 
-### Preparing everything for make a usb installer
+## Preparing everything for make a usb installer
 
 Packages required:
 
