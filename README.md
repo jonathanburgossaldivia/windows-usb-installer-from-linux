@@ -66,7 +66,7 @@ usb='sdc'
 usb_name='PENDRIVE'
 ```
 
-### How to use
+## How to use
 
 Now that we have everything we must execute the script, for this just drag and drop it to the console or terminal app, interpose 'sudo sh ' and press enter:
 
