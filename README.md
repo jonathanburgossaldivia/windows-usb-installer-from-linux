@@ -17,7 +17,7 @@ In some cases Windows 7, 8 or 10 does not detect cd or dvd drivers, this means:
 To solve this you must:
 
 - Use a usb 2.0 flash drive for the installation
-- Put the flash drive in a usb 2.0 port of PC or laptop
+- Put the flash drive in a usb 2.0 port of PC or laptop everything for make a usb installer
 
 ### Grub does not start in UEFI mode
 
@@ -66,7 +66,7 @@ usb='sdc'
 usb_name='PENDRIVE'
 ```
 
-## How to use
+## How to use Legacy installer script
 
 Now that we have everything we must execute the script, for this just drag and drop it to the console or terminal app, interpose 'sudo sh ' and press enter:
 
@@ -95,6 +95,10 @@ tree -d '/media/jonathan/WINDOWS1/'
 │   └── locale
 └── sources
 ```
+
+## How to use Legacy installer script
+
+- Pending: UEFI installation works only to the grub.
 
 ## Built With
 
