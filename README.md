@@ -55,6 +55,28 @@ Now that we have everything we must execute the script, for this just drag it to
 sudo sh -c '/your/usb/path/legacy_installer.sh'
 ```
 
+If all goes well you should be able to see the folder called 'grub' on your pendrive, (at this point your flash drive is bootable), to finish with the pendrive just disconnect your flash drive and reconnect it, then copy all the files from your Windows iso into the root of the pendrive (not inside the 'grub' folder).
+
+```
+tree -d '/media/jonathan/WINDOWS1/'
+/media/jonathan/WINDOWS1/
+├── boot
+│   ├── es-mx
+│   ├── fonts
+│   └── resources
+├── efi
+│   ├── boot
+│   └── microsoft
+│       └── boot
+│           ├── fonts
+│           └── resources
+├── grub
+│   ├── fonts
+│   ├── i386-pc
+│   └── locale
+└── sources
+```
+
 ## Built With
 
 * GNU bash, versión 5.0.3(1)-release (x86_64-pc-linux-gnu)
