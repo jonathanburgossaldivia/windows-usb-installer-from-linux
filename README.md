@@ -6,6 +6,17 @@ Automatic create bootable usb with grub, then copy and paste files from Windows 
 
 Tested only on Debian Buster.
 
+## Prevent driver problems when installing windows
+
+In some cases Windows 7, 8 or 10 does not detect cd or dvd drivers, this means:
+
+- Windows claims that the installation is done from a CD/DVD, therefore the problem is with the USB stick or PC USB port.
+
+To solve this you must:
+
+- Use a usb 2.0 flash drive
+- Put the flash drive in a usb 2.0 port of a PC
+
 ### Prerequisites
 
 Packages required:
