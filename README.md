@@ -23,9 +23,9 @@ To solve this you must:
 
 To solve this you must:
 
-- Select a uefi file as trusted for executing
-- Create a profile for boot with this path to file as trusted on uefi settings: /USB0/BOOT/grubx64.efi
-- Boot from the uefi profile
+- Select a UEFI file as trusted for executing
+- Create a profile for boot with this path to file as trusted on UEFI settings: /USB0/BOOT/grubx64.efi
+- Boot from the UEFI profile
 
 ### Prerequisites
 
