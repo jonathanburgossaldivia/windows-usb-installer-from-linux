@@ -47,7 +47,7 @@ Change mode to 'x' to the files, example:
 chmod +x legacy_installer.sh
 ```
 
-First steps you need to know the name of device, in my case, since the name of my usb is WINDOWS I can know that the name of the device is 'sdb', for know that you can use this command: 
+First steps you need to know the name of device, in my case, since the name of my usb is WINDOWS and the name of the partition is 'sdb1' i can know that the name of the device is 'sdb', for know that you can use this command: 
 
 ```
 sudo lsblk | grep -v sda
