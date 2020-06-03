@@ -1,20 +1,20 @@
 usb='sdb'
 usbname='WINDOWS'
 
-echo '### PREPARING ###'
-sudo killall gparted
-for p in `sudo ls /dev/${usb}?`; do sudo umount $p; done
-for p in `sudo ls /dev/sd?`; do sudo umount $p; done
+echo "\n\n### PREPARING ###\n\n"
+sudo killall gparted 2> /dev/null
+for p in `sudo ls /dev/${usb}?`; do sudo umount $p 2> /dev/null; done
+for p in `sudo ls /dev/sd?`; do sudo umount $p 2> /dev/null; done
 
-echo '### FILESYSTEMS ###'
+echo "\n\n### FILESYSTEMS ###\n\n"
 sudo /usr/sbin/sfdisk --delete /dev/${usb}
 sudo /sbin/parted /dev/${usb} mklabel msdos --script
-sudo /sbin/parted /dev/${usb} mkpart primary fat32 0% 100%
 
-echo '### PARTITIONS ###'
+echo "\n\n### PARTITIONS ###\n\n"
+sudo /sbin/parted /dev/${usb} mkpart primary fat32 0% 100%
 sudo mkfs.fat -F32 -v -I -n ${usbname} /dev/${usb}1
 
-echo '### GRUB INSTALLATION ###'
+echo "\n\n### GRUB INSTALLATION ###\n\n"
 #sudo rm -rf /media/*
 sudo rm -rf /media/${usbname} 
 sudo mkdir /media/${usbname}

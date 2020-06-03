@@ -1,27 +1,27 @@
 usb='sdb'
-usb_name='WINDOWS'
+usbname='WINDOWS'
 
-echo '### PREPARING ###'
-sudo killall gparted
-for p in `sudo ls /dev/${usb}?`; do sudo umount $p; done
-for p in `sudo ls /dev/sd?`; do sudo umount $p; done
+echo "\n\n### PREPARING ###\n\n"
+sudo killall gparted 2> /dev/null
+for p in `sudo ls /dev/${usb}?`; do sudo umount $p 2> /dev/null; done
+for p in `sudo ls /dev/sd?`; do sudo umount $p 2> /dev/null; done
 
-echo '### FILESYSTEMS ###'
+echo "\n\n### FILESYSTEMS ###\n\n"
 sudo /usr/sbin/sfdisk --delete /dev/${usb}
 sudo /sbin/parted /dev/${usb} mklabel msdos --script
+
+echo "\n\n### PARTITIONS ###\n\n"
 sudo /sbin/parted /dev/${usb} mkpart primary fat32 0% 100%
+sudo mkfs.fat -F32 -v -I -n ${usbname} /dev/${usb}1
 
-echo '### PARTITIONS ###'
-sudo mkfs.fat -F32 -v -I -n ${usb_name} /dev/${usb}1
-
-echo '### GRUB INSTALLATION ###'
+echo "\n\n### GRUB INSTALLATION ###\n\n"
 #sudo rm -rf /media/*
-sudo rm -rf /media/${usb_name} 
-sudo mkdir /media/${usb_name}
-sudo mount /dev/${usb}1 /media/${usb_name}/
-sudo grub-install --removable --boot-directory=/media/${usb_name} --efi-directory=/media/${usb_name} --target=x86_64-efi /dev/${usb}
-sudo mkdir -p /media/${usb_name}/grub
-sudo bash -c "cat << EOF > /media/${usb_name}/grub/grub.cfg
+sudo rm -rf /media/${usbname} 
+sudo mkdir /media/${usbname}
+sudo mount /dev/${usb}1 /media/${usbname}/
+sudo grub-install --removable --boot-directory=/media/${usbname} --efi-directory=/media/${usbname} --target=x86_64-efi /dev/${usb}
+sudo mkdir -p /media/${usbname}/grub
+sudo bash -c "cat << EOF > /media/${usbname}/grub/grub.cfg
 default=1  
 timeout=15
 set menu_color_highlight=yellow/dark-gray
@@ -31,9 +31,9 @@ set color_normal=yellow/black
 menuentry 'USB Installation for Microsoft Windows 7/8/8.1/10 UEFI/GPT' {
     insmod ntfs
     insmod search_label
-    search --no-floppy --set=root --label ${usb_name} --hint hd0,msdos1
+    search --no-floppy --set=root --label ${usbname} --hint hd0,msdos1
     ntldr /bootmgr
     boot
 }
 EOF"
-sudo cp /media/${usb_name}/grub/grub.cfg /media/${usb_name}/EFI/BOOT/grub.cfg
+sudo cp /media/${usbname}/grub/grub.cfg /media/${usbname}/EFI/BOOT/grub.cfg
