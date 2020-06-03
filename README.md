@@ -59,11 +59,11 @@ sr0     11:0    1  1024M  0 rom
 
 ```
 
-Now that we have everything ready we must modify the script (are only the first 2 lines of the script), first put the name of the device (assuming it is 'sdc') and then the name that we will give to the pendrive (example 'pendrive'), it must be simple, with capital letters and without numbers:
+Now that we have everything ready we must modify the script (are only the first 2 lines of the script), first put the name of the device (assuming it is 'sdb') and then the new name that we will give to the pendrive (example 'MYUSB'), it must be simple, with capital letters and without numbers:
 
 ```
-usb='sdc'
-usb_name='PENDRIVE'
+usb='sdb'
+usb_name='MYUSB'
 ```
 
 ## How to use Legacy installer script
