@@ -4,7 +4,7 @@ Automatic create bootable usb with grub, then copy and paste files from Windows 
 
 ### General information
 
-Tested only on Debian Buster.
+Tested only on Debian Buster and Kubuntu 20.
 
 ## Before starting to consider a couple of things
 
