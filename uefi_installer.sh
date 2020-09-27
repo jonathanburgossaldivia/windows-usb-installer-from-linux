@@ -1,7 +1,9 @@
-## sudo apt install grub-efi-amd64-bin grub-efi-ia32-bin
+## Required packages: grub-efi-amd64-bin grub-efi-ia32-bin
 
-usb='sdb'
-usbname='WINDOWS'
+usb='sdb' #change sdb for your device name (entire disk or pendrive), list your devices with 'fdisk -l' command
+boot_partition='EFI'
+os_partition='WINDOWS'
+
 
 echo "\n\n### PREPARING ###\n\n"
 sudo killall gparted 2> /dev/null
@@ -16,22 +18,22 @@ echo "\n\n### PARTITIONS ###\n\n"
 sudo /sbin/parted /dev/${usb} mkpart primary fat32 0% 10%
 sudo /sbin/parted /dev/${usb} mkpart primary ntfs 10% 100%
 
-sleep 5 #debe estar si o si
+sleep 5 #waith for finish previous tasks
 
-sudo mkfs.fat -F32 -I -n EFII /dev/${usb}1
-sudo mkfs.ntfs --quick -F -L ${usbname} /dev/${usb}2
+sudo mkfs.fat -F32 -I -n ${boot_partition} /dev/${usb}1
+sudo mkfs.ntfs --quick -F -L ${os_partition} /dev/${usb}2
 
 echo "\n\n### GRUB INSTALLATION ###\n\n"
 
-sudo rm -rf /media/EFII
-sudo mkdir /media/EFII
+sudo rm -rf /media/${boot_partition}
+sudo mkdir /media/${boot_partition}
 
-sudo mount /dev/${usb}1 /media/EFII/
+sudo mount /dev/${usb}1 /media/${boot_partition}/
 
-sudo grub-install --removable --boot-directory=/media/EFII --efi-directory=/media/EFII --target=x86_64-efi /dev/${usb}
-sudo mkdir -p /media/EFII/grub
+sudo grub-install --removable --boot-directory=/media/${boot_partition} --efi-directory=/media/${boot_partition} --target=x86_64-efi /dev/${usb}
+sudo mkdir -p /media/${boot_partition}/grub
 
-sudo bash -c "cat << EOF > /media/EFII/grub/grub.cfg
+sudo bash -c "cat << EOF > /media/${boot_partition}/grub/grub.cfg
 default=1  
 timeout=15
 set menu_color_highlight=yellow/dark-gray
@@ -45,4 +47,4 @@ menuentry 'USB Installation for Microsoft Windows 7/8/8.1/10 UEFI/GPT' {
     boot
 }
 EOF"
-sudo cp /media/EFII/grub/grub.cfg /media/EFII/EFI/BOOT/grub.cfg
+sudo cp /media/${boot_partition}/grub/grub.cfg /media/${boot_partition}/EFI/BOOT/grub.cfg
