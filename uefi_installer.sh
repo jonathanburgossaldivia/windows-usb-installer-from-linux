@@ -36,7 +36,7 @@ sleep 1
 mkdir /media/${boot_partition}
 cd /media/${boot_partition}
 mkdir grub
-
+uuid=`sudo blkid -s UUID -o value /dev/${usb}2`
 sudo bash -c "cat << EOF > /media/${boot_partition}/grub/grub.cfg
 default=1  
 timeout=15
