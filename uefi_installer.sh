@@ -31,7 +31,11 @@ sudo mkdir /media/${boot_partition}
 sudo mount /dev/${usb}1 /media/${boot_partition}/
 
 sudo grub-install --removable --boot-directory=/media/${boot_partition} --efi-directory=/media/${boot_partition} --target=x86_64-efi /dev/${usb}
-sudo mkdir -p /media/${boot_partition}/grub
+
+sleep 1
+mkdir /media/${boot_partition}
+cd /media/${boot_partition}
+mkdir grub
 
 sudo bash -c "cat << EOF > /media/${boot_partition}/grub/grub.cfg
 default=1  
