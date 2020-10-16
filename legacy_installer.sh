@@ -20,7 +20,10 @@ sudo rm -rf /media/${usbname}
 sudo mkdir /media/${usbname}
 sudo mount /dev/${usb}1 /media/${usbname}/
 sudo grub-install --target=i386-pc --recheck --boot-directory=/media/${usbname} /dev/${usb}
-mkdir -p /media/${usbname}/grub
+sleep 1
+mkdir /media/${usbname}
+cd /media/${usbname}
+mkdir grub
 sudo bash -c "cat << EOF > /media/${usbname}/grub/grub.cfg
 default=1  
 timeout=15
