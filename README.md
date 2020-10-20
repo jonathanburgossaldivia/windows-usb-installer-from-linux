@@ -49,7 +49,8 @@ usb='sdb'
 usb_name='MYUSB'
 ```
 
-## How to use Legacy installer script (MSDOS)
+## How to use Legacy installer script (MSDOS file system with FAT32)
+Important: FAT32 does not allow copying files larger than 4 gb that's why the largest file of the windows installer is divided into 3 with wimlib-imagex.
 
 Execute with:
 
@@ -64,11 +65,12 @@ You should be able to see the folder called 'grub' on your pendrive, (at this po
 3. Connect yout flash drive to your pc.
 4. Boot in legacy mode and install Windows.
 
-## How to use UEFI installer script (GPT)
+## How to use UEFI installer script (GPT file system with FAT32 and NTFS)
 
 - Same as legacy mode but configure the uefi options of your motherboard.
 
-## How to use win10__installer script (MSDOS)
+## How to use win10__installer script (MSDOS file system with FAT32)
+important: FAT32 does not allow copying files larger than 4 gb 
 
 - Same as legacy mode but modify the path of your Windows iso.
 
