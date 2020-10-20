@@ -6,22 +6,9 @@ Automatic create bootable usb with grub, then copy and paste files from Windows 
 
 Tested only on Debian Buster and Kubuntu 20.
 
-## Before starting to consider a couple of things
+- I recommend using a usb 2.0 pendrive in a pc usb 2.0 port (when installing from usb 3.0 it shows an error about the install.swm file).
 
-### To prevent problems with CD/DVD drivers on installation
-
-In some cases Windows 7, 8 or 10 does not detect cd or dvd drivers, this means:
-
-- Windows claims that the installation is done from a CD/DVD, therefore the problem is with the USB stick or PC USB port.
-
-To solve this you must:
-
-- Use a usb 2.0 flash drive for the installation
-- Put the flash drive in a usb 2.0 port of PC or laptop everything for make a usb installer
-
-### To prevent Grub does not start in UEFI mode
-
-To solve this you must:
+### Start installer in UEFI mode
 
 - Select a UEFI file as trusted for executing from your Bios
 - Create a profile for boot with this path to file as trusted on UEFI settings: /USB0/BOOT/grubx64.efi
@@ -35,19 +22,15 @@ Packages required:
 grub-pc-bin, grub-efi-ia32-bin, grub-efi-amd64-bin, parted, wimlib-imagex
 ```
 
-If you have a Debian based system you can install the packages with this command:
-
-```
-sudo apt install grub-pc-bin grub-efi-ia32-bin grub-efi-amd64-bin parted
-```
-
 Change mode to 'x' to the files, example:
 
 ```
 chmod +x legacy_installer.sh
 ```
 
-First steps you need to know the name of device, in my case, since the name of my usb is WINDOWS and the name of the partition is 'sdb1' i can know that the name of the device is 'sdb', for know that you can use this command: 
+## First steps
+
+First steps you need to know the name of device, in this example case is 'sdb': 
 
 ```
 sudo lsblk | grep -v sda
@@ -59,46 +42,35 @@ sr0     11:0    1  1024M  0 rom
 
 ```
 
-Now that we have everything ready we must modify the script (are only the first 2 lines of the script), first put the name of the device (assuming it is 'sdb') and then the new name that we will give to the pendrive (example 'MYUSB'), it must be simple, with capital letters and without numbers:
+Open the file and change the name of the device assuming it is 'sdb' and then the new name that we will give to the pendrive example 'MYUSB'), it must be simple, with capital letters and without numbers, now save the file:
 
 ```
 usb='sdb'
 usb_name='MYUSB'
 ```
 
-## How to use Legacy installer script
+## How to use Legacy installer script (MSDOS)
 
-Now that we have everything we must execute the script, for this just drag and drop it to the console or terminal app, interpose 'sudo sh ' and press enter:
+Execute with:
 
 ```
 sudo sh '/your/folder/path/legacy_installer.sh'
 ```
 
-If all goes well you should be able to see the folder called 'grub' on your pendrive, (at this point your flash drive is bootable), to finish with the pendrive just disconnect your flash drive and reconnect it, then copy all the files from your Windows iso into the root of the pendrive (not inside the 'grub' folder), to understand it better, the iso files should be copied next to the 'grub' folder (not real tree, is only a example).
+You should be able to see the folder called 'grub' on your pendrive, (at this point your flash drive is bootable).
 
-```
-tree -d '/media/jonathan/WINDOWS1/'
-/media/jonathan/WINDOWS1/
-├── boot
-│   ├── es-mx
-│   ├── fonts
-│   └── resources
-├── efi
-│   ├── boot
-│   └── microsoft
-│       └── boot
-│           ├── fonts
-│           └── resources
-├── grub
-│   ├── fonts
-│   ├── i386-pc
-│   └── locale
-└── sources
-```
+1. Disconnect your flash drive and reconnect it.
+2. Copy all the files from your Windows iso into the root of the pendrive not inside the 'grub' folder.
+3. Connect yout flash drive to your pc.
+4. Boot in legacy mode and install Windows.
 
-## How to use UEFI installer script
+## How to use UEFI installer script (GPT)
 
-- Pending: UEFI installation works, but only to the grub entries.
+- Same as legacy mode but configure the uefi options of your motherboard.
+
+## How to use win10__installer script (MSDOS)
+
+- Same as legacy mode but modify the path of your Windows iso.
 
 ## Built With
 
