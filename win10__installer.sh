@@ -1,5 +1,7 @@
 usb='sdg'
 usbname='WINDOWS'
+mount_point='dvd_win'
+win_iso="/home/$LOGNAME/Descargas/Win10_2004_Spanish_x64.iso"
 
 echo "### PREPARING ###"
 sudo killall gparted 2> /dev/null
@@ -21,13 +23,13 @@ sudo mount -t vfat /dev/${usb}1 /media/${usbname}/
 echo "### GRUB INSTALLATION ###"
 sudo grub-install --target=i386-pc --recheck --boot-directory=/media/${usbname} /dev/${usb}
 echo "### MOUNT WIN DVD ###"
-mount_point='dvd_win'
+
 sudo mkdir /media/$mount_point 2> /dev/null
-sudo mount -t udf /home/$LOGNAME/Descargas/Win10_2004_Spanish_x64.iso /media/$mount_point
+sudo mount -t udf "$win_iso" /media/$mount_point
 
 echo "### WRITING TEMP FILES###"
 sudo cp -p /media/$mount_point/sources/install.wim /tmp/install.wim
-sudo wimlib-imagex split  /tmp/install.wim /tmp/install.swm 2000
+sudo wimlib-imagex split /tmp/install.wim /tmp/install.swm 2000
 
 echo "### COPYING FILES TO USB ###"
 sudo rsync --perms -q --recursive -P --exclude="install.wim" /media/$mount_point/* /media/${usbname}/
