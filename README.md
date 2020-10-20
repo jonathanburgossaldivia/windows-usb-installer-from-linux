@@ -1,6 +1,6 @@
 # Make a Windows usb installer from Linux
 
-Automatic create bootable usb with grub, then copy and paste files from Windows iso to usb, tested with Windows 7, 8 and 10.
+Easy way to create bootable usb flash drive with grub as bootloader.
 
 ### General information
 
