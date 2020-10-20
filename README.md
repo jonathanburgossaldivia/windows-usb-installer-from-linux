@@ -69,7 +69,7 @@ You should be able to see the folder called 'grub' on your pendrive, (at this po
 
 - Same as legacy mode but configure the uefi options of your motherboard.
 
-## How to use win10__installer script (MSDOS file system with FAT32)
+## How to use win10_installer script (MSDOS file system with FAT32)
 important: FAT32 does not allow copying files larger than 4 gb 
 
 - Same as legacy mode but modify the path of your Windows iso.
