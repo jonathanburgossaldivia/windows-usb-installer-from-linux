@@ -32,7 +32,7 @@ To solve this you must:
 Packages required:
 
 ```
-grub-pc-bin, grub-efi-ia32-bin, grub-efi-amd64-bin, parted
+grub-pc-bin, grub-efi-ia32-bin, grub-efi-amd64-bin, parted, wimlib-imagex
 ```
 
 If you have a Debian based system you can install the packages with this command:
