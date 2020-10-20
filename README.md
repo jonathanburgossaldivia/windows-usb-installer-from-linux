@@ -67,7 +67,7 @@ You should be able to see the folder called 'grub' on your pendrive, (at this po
 
 ## How to use UEFI installer script (GPT file system with FAT32 and NTFS)
 
-- Same as legacy mode but configure the uefi options of your motherboard.
+- Same as legacy mode but configure the uefi options of your motherboard and boot as uefi mode.
 
 ## How to use win10_installer script (MSDOS file system with FAT32)
 Important: FAT32 does not allow copying files larger than 4 gb that's why the largest file of the windows installer is divided into 3 with wimlib-imagex.
