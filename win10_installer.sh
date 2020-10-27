@@ -42,7 +42,7 @@ sudo chmod 555 /media/${usbname}/sources/install*
 sudo chown nobody:nogroup /media/${usbname}/*
 echo "### DELETING TEMP FILES###"
 sudo rm -rf /tmp/install*.swm /tmp/install.wim 
-echo "### CREATING FRUB.CFG FILE ###"
+echo "### CREATING GRUB.CFG FILE ###"
 cd /media/${usbname} 2> /dev/null
 mkdir grub 2> /dev/null
 sudo bash -c "cat << EOF > /media/${usbname}/grub/grub.cfg
