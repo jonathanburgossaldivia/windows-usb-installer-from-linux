@@ -19,7 +19,7 @@ Tested only on Debian Buster and Kubuntu 20.
 Packages required:
 
 ```
-grub-pc-bin, grub-efi-ia32-bin, grub-efi-amd64-bin, parted, wimlib-imagex
+grub-pc-bin grub-efi-ia32-bin grub-efi-amd64-bin parted wimtools
 ```
 
 Change mode to 'x' to the files, example:
