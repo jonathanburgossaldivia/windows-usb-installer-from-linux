@@ -1,20 +1,20 @@
 usb='sdb'
 usbname='WINDOWS'
 
-echo "\n\n### PREPARING ###\n\n"
+echo "### PREPARING ###"
 sudo killall gparted 2> /dev/null
 for p in `sudo ls /dev/${usb}?`; do sudo umount $p 2> /dev/null; done
 for p in `sudo ls /dev/sd?`; do sudo umount $p 2> /dev/null; done
 
 echo "\n\n### FILESYSTEMS ###\n\n"
-sudo /usr/sbin/sfdisk --delete /dev/${usb}
+sudo /usr/sbin/sfdisk --delete /dev/${usb} || sudo /sbin/sfdisk --delete /dev/${usb}
 sudo /sbin/parted /dev/${usb} mklabel msdos --script
 
-echo "\n\n### PARTITIONS ###\n\n"
+echo "### PARTITIONS ###"
 sudo /sbin/parted /dev/${usb} mkpart primary fat32 0% 100%
 sudo mkfs.fat -F32 -v -I -n ${usbname} /dev/${usb}1
 
-echo "\n\n### GRUB INSTALLATION ###\n\n"
+echo "### GRUB INSTALLATION ###"
 #sudo rm -rf /media/*
 sudo rm -rf /media/${usbname} 
 sudo mkdir /media/${usbname}
@@ -39,4 +39,3 @@ menuentry 'USB Installation for Microsoft Windows 7/8/8.1/10 MBR/MSDOS' {
     boot
 }
 EOF"
-
